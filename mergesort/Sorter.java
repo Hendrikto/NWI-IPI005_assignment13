@@ -15,10 +15,16 @@ public class Sorter implements Runnable {
 
     private final int[] array;
 
+    /**
+     * @param array the array to sort
+     */
     public Sorter(int[] array) {
         this.array = array;
     }
 
+    /**
+     * Sort the array.
+     */
     @Override
     public void run() {
         if (array.length > THRESHOLD) {

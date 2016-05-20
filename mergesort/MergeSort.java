@@ -16,7 +16,7 @@ public class MergeSort {
      * Sort the given array in O(n log n) time. The array is split in to two
      * parts of equal size. These parts are sorted recursively and merged.
      *
-     * @param array
+     * @param array the array to sort
      */
     public static void sort(int[] array) {
         if (array.length > 1) {
@@ -28,6 +28,11 @@ public class MergeSort {
         }
     }
 
+    /**
+     * Sort the given array concurrently.
+     *
+     * @param array the array to sort
+     */
     public static void concurrentSort(int[] array) {
         Thread t = new Thread(new Sorter(array));
         t.start();
