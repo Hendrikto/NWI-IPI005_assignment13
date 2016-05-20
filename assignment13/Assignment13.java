@@ -16,7 +16,8 @@ public class Assignment13 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        testFileFinder();
+//        testFileFinder();
+        new SortingTester(10000000).test();
     }
 
     private static void testFileFinder() {
