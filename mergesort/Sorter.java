@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  */
 public class Sorter implements Runnable {
 
-    private static final int THRESHOLD = 1000;
+    private static final int THRESHOLD = 250000;
 
     private final int[] array;
 
