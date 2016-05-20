@@ -1,5 +1,8 @@
 package assignment13;
 
+import java.util.Arrays;
+import mergesort.MergeSort;
+
 /**
  * Test sorting an array with different methods.
  *
@@ -14,7 +17,20 @@ public class SortingTester {
     }
 
     public void test() {
-        // todo
+        System.out.printf(
+                "This system has %d available cores.\n",
+                Runtime.getRuntime().availableProcessors()
+        );
+        int[] a1 = Arrays.copyOf(array, array.length);
+        int[] a2 = Arrays.copyOf(array, array.length);
+        long startSeq = System.currentTimeMillis();
+        MergeSort.sort(a1);
+        long stopSeq = System.currentTimeMillis();
+        long startCon = System.currentTimeMillis();
+        MergeSort.concurrentSort(a2);
+        long stopCon = System.currentTimeMillis();
+        System.out.printf("Sequential sorting took %d ms\n", stopSeq - startSeq);
+        System.out.printf("Concurrent sorting took %d ms\n", stopCon - startCon);
     }
 
     private int[] random(int size) {
