@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Test the file finder and sorting algorithms.
  *
  * @author Hendrik Werner // s4549775
  */
