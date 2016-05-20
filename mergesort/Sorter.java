@@ -34,8 +34,7 @@ public class Sorter implements Runnable {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Sorter.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.arraycopy(s1.getArray(), 0, array, 0, s1.getArray().length);
-            System.arraycopy(s2.getArray(), 0, array, s1.getArray().length, s2.getArray().length);
+            MergeSort.merge(s1.getArray(), s2.getArray(), array);
         } else {
             MergeSort.sort(array);
         }
