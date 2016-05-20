@@ -1,5 +1,6 @@
 package mergesort;
 
+import assignment13.Assignment13;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,7 +12,7 @@ import java.util.logging.Logger;
  */
 public class Sorter implements Runnable {
 
-    private static final int THRESHOLD = 250000;
+    private static final int THRESHOLD = Assignment13.ARRAY_SIZE / 4;
 
     private final int[] array;
 
