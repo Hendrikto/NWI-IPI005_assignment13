@@ -13,6 +13,9 @@ public class FileFinder {
 
     private final File rootDir;
 
+    /**
+     * @param root the path of the root folder
+     */
     public FileFinder(String root) throws IOException {
         rootDir = new File(root);
         if (!(rootDir.exists() && rootDir.isDirectory())) {
@@ -20,6 +23,11 @@ public class FileFinder {
         }
     }
 
+    /**
+     * Find a file in the root directory.
+     *
+     * @param file the file name to search for
+     */
     public void findFile(String file) {
         new Thread(new FolderSearcher(rootDir, file)).start();
     }

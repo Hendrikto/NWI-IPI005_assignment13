@@ -12,11 +12,18 @@ public class FolderSearcher implements Runnable {
     private final String fileName;
     private final File folder;
 
+    /**
+     * @param folder the folder to search in
+     * @param fileName the file name to search for
+     */
     public FolderSearcher(File folder, String fileName) {
         this.folder = folder;
         this.fileName = fileName;
     }
 
+    /**
+     * Search for the specified file.
+     */
     @Override
     public void run() {
         File[] files = folder.listFiles();
