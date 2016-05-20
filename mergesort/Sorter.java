@@ -22,12 +22,8 @@ public class Sorter implements Runnable {
     @Override
     public void run() {
         if (array.length > THRESHOLD) {
-            Sorter s1 = new Sorter(
-                    Arrays.copyOf(array, array.length / 2)
-            );
-            Sorter s2 = new Sorter(
-                    Arrays.copyOfRange(array, array.length / 2, array.length)
-            );
+            Sorter s1 = new Sorter(Arrays.copyOf(array, array.length / 2));
+            Sorter s2 = new Sorter(Arrays.copyOfRange(array, array.length / 2, array.length));
             Thread t1 = new Thread(s1);
             Thread t2 = new Thread(s2);
             t1.start();
