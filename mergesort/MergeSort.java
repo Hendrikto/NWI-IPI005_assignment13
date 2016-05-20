@@ -8,6 +8,7 @@ import java.util.logging.Logger;
  * Sort an array of integers in O(n log n).
  *
  * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  * @author Sjaak Smetsers (?)
  */
 public class MergeSort {

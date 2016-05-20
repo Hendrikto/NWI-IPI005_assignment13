@@ -7,6 +7,7 @@ import java.io.IOException;
  * Find a file recursively.
  *
  * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  * @author Sjaak Smetsers (?)
  */
 public class FileFinder {

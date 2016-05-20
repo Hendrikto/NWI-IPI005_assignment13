@@ -9,6 +9,7 @@ import java.util.logging.Logger;
  * Sort an array of integers.
  *
  * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  */
 public class Sorter implements Runnable {
 

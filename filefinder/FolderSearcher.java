@@ -6,6 +6,7 @@ import java.io.File;
  * Search a folder for a file.
  *
  * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  */
 public class FolderSearcher implements Runnable {
 
