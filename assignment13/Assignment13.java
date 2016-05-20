@@ -12,12 +12,14 @@ import java.util.logging.Logger;
  */
 public class Assignment13 {
 
+    public static final int ARRAY_SIZE = 10000000;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 //        testFileFinder();
-        new SortingTester(10000000).test();
+        new SortingTester(ARRAY_SIZE).test();
     }
 
     /**
