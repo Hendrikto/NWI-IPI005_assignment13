@@ -1,6 +1,8 @@
 package mergesort;
 
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Sort an array of integers in O(n log n).
@@ -23,6 +25,16 @@ public class MergeSort {
             sort(firstHalf);
             sort(secondHalf);
             merge(firstHalf, secondHalf, array);
+        }
+    }
+
+    public static void concurrentSort(int[] array) {
+        Thread t = new Thread(new Sorter(array));
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MergeSort.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
