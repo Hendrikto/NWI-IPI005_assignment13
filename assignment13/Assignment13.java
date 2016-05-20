@@ -20,6 +20,9 @@ public class Assignment13 {
         new SortingTester(10000000).test();
     }
 
+    /**
+     * Test the file finder.
+     */
     private static void testFileFinder() {
         try {
             new FileFinder("C:\\").findFile("FileFinder.java");

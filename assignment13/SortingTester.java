@@ -16,6 +16,9 @@ public class SortingTester {
         this.array = random(size);
     }
 
+    /**
+     * Test sequential and concurrent sorting.
+     */
     public void test() {
         System.out.printf(
                 "This system has %d available cores.\n",
@@ -33,6 +36,10 @@ public class SortingTester {
         System.out.printf("Concurrent sorting took %d ms\n", stopCon - startCon);
     }
 
+    /**
+     * @param size the size of the array
+     * @return an array with the specified size initialized with random values
+     */
     private int[] random(int size) {
         int[] ints = new int[size];
         for (int i = 0; i < size; i++) {
