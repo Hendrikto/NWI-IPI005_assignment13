@@ -10,8 +10,8 @@ import mergesort.MergeSort;
  * Results we got when testing locally with an array of size 10000000:
  *
  * This system has 4 available cores.
- * Sequential sorting took 1715 ms
- * Concurrent sorting took 559 ms
+ * Sequential sorting took 1691 ms
+ * Concurrent sorting took 556 ms
  *
  * @author Hendrik Werner // s4549775
  * @author Jasper Haasdijk // s4449754
