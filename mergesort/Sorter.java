@@ -2,6 +2,10 @@ package mergesort;
 
 import assignment13.Assignment13;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,18 +34,18 @@ public class Sorter implements Runnable {
     @Override
     public void run() {
         if (array.length > THRESHOLD) {
+            ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
             Sorter s1 = new Sorter(Arrays.copyOf(array, array.length / 2));
             Sorter s2 = new Sorter(Arrays.copyOfRange(array, array.length / 2, array.length));
-            Thread t1 = new Thread(s1);
-            Thread t2 = new Thread(s2);
-            t1.start();
-            t2.start();
+            Future f1 = executor.submit(s1);
+            Future f2 = executor.submit(s2);
             try {
-                t1.join();
-                t2.join();
-            } catch (InterruptedException ex) {
+                f1.get();
+                f2.get();
+            } catch (InterruptedException | ExecutionException ex) {
                 Logger.getLogger(Sorter.class.getName()).log(Level.SEVERE, null, ex);
             }
+            executor.shutdown();
             MergeSort.merge(s1.getArray(), s2.getArray(), array);
         } else {
             MergeSort.sort(array);
