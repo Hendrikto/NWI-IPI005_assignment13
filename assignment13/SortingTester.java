@@ -1,6 +1,7 @@
 package assignment13;
 
 import java.util.Arrays;
+import java.util.Random;
 import mergesort.MergeSort;
 
 /**
@@ -48,9 +49,10 @@ public class SortingTester {
      * @return an array with the specified size initialized with random values
      */
     private int[] random(int size) {
+        Random generator = new Random();
         int[] ints = new int[size];
         for (int i = 0; i < size; i++) {
-            ints[i] = (int) (Math.random() * Integer.MAX_VALUE);
+            ints[i] = generator.nextInt();
         }
         return ints;
     }
